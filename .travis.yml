@@ -6,7 +6,7 @@ node_js:
 
 branches:
   only:
-    - develop
+    - dev
 
 cache:
   directories:
