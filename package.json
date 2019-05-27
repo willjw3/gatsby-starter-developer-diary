@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-starter-developer-diary",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A web-developer blog template to get you blogging quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "willjw3 <https://github.com/willjw3>",
   "dependencies": {
     "gatsby": "^2.7.1",
     "gatsby-image": "^2.1.1",
@@ -12,6 +12,7 @@
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.1.1",
     "gatsby-source-filesystem": "^2.0.37",
+    "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.19",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
