@@ -1,3 +1,50 @@
+.head-main {
+  width: 100%;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.head-elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+.bottom-bar {
+  width: 100%;
+  background: black;
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.mobile-bio-main {
+  width: 100%;
+  background: white;
+  display: none;
+}
 .head-logo {
+  font-family: "Raleway";
+  font-size: 1.75rem;
+}
+
+small {
     font-family: "Raleway";
+}
+
+
+
+@media only screen and (max-width: 850px) {
+  .bottom-bar{display: flex;}
+  .social-links{display: none;}
+  .mobile-bio-main{display: block;}
 }
