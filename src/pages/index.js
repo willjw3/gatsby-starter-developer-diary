@@ -1,75 +1,109 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { css } from "@emotion/core"
+import "bootstrap/dist/css/bootstrap.css"
+import "./index.css"
+
 import Layout from "../components/layout"
-
 import SEO from "../components/seo"
+import Sidebar from "../components/sidebar/Sidebar"
+import TechTag from "../components/tags/TechTag"
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    <div>
-      <h1
-        css={css`
-          display: inline-block;
-          border-bottom: 1px solid;
-        `}
-      >
-        Amazing Pandas Eating Things
-      </h1>
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-            css={css`
-              text-decoration: none;
-              color: inherit;
-            `}
-          >
-            <h3
-              css={css`
-                margin-bottom: 10px;
-              `}
-            >
-              {node.frontmatter.title}{" "}
-              <span
-                css={css`
-                  color: #bbb;
-                `}
-              >
-                — {node.frontmatter.date}
-              </span>
-            </h3>
-            <p>{node.excerpt}</p>
-          </Link>
+const IndexPage = ({ data }) => {
+  const posts = data.allMarkdownRemark.edges
+  const labels = data.site.siteMetadata.labels
+
+  const getTechTags = (tags) => {
+    const techTags = []
+    tags.forEach((tag, i) => {
+      labels.forEach((label) => {
+        if (tag === label.tag) {
+          techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size} color={label.color} />)
+        }
+      })
+    })
+    return techTags
+  }
+
+
+  return (
+    <Layout>
+      <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `node.js`, `graphql`]} />
+      <div className="index-main">
+        <div className="sidebar px-4 py-2">
+          <Sidebar />
         </div>
-      ))}
-    </div>
-  </Layout>
-)
 
-export default IndexPage
+        <div className="post-list-main">
+          {posts.map((post) => {
+            const tags = post.node.frontmatter.tags
+            return (
+              <div key={post.node.id} className="container mt-5">
+                <Link
+                  to={post.node.fields.slug}
+                  className="text-dark"
+                >
+                  <h2>{post.node.frontmatter.title}</h2>
+                </Link>
+                <small className="d-block text-info">Posted in {post.node.frontmatter.date}
+                </small>
+                <p className="mt-3 d-inline">{post.node.excerpt}</p>
+                <Link
+                  to={post.node.fields.slug}
+                  className="text-primary"
+                >
+                  <small className="d-inline-block ml-3"> Read full post</small>
+                </Link>
+                <div className="d-block">
+                  {getTechTags(tags)}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </Layout>
+  )
+}
 
-export const query = graphql`
-         query {
+export const pageQuery = graphql`
+         query IndexQuery {
+           site {
+             siteMetadata {
+               title 
+               author
+               labels {
+                 tag
+                 tech 
+                 name 
+                 size 
+                 color
+               } 
+             }
+           }
            allMarkdownRemark(
+             limit: 4
              sort: { fields: [frontmatter___date], order: DESC }
+             filter: { frontmatter: { published: { eq: true } } }
            ) {
              totalCount
              edges {
                node {
+                 excerpt(pruneLength: 200)
+                 html
                  id
                  frontmatter {
                    title
-                   date(formatString: "DD MMMM, YYYY")
+                   date(formatString: "MMMM, YYYY")
+                   tags
                  }
                  fields {
                    slug
                  }
-                 excerpt
                }
              }
            }
          }
        `
+
+export default IndexPage
+
