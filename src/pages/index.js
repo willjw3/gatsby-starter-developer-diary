@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `node.js`, `graphql`]} />
+      <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]} />
       <div className="index-main">
         <div className="sidebar px-4 py-2">
           <Sidebar />
@@ -43,7 +43,7 @@ const IndexPage = ({ data }) => {
                 >
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
-                <small className="d-block text-info">Posted in {post.node.frontmatter.date}
+                <small className="d-block text-info">Posted on {post.node.frontmatter.date}
                 </small>
                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
                 <Link
@@ -92,7 +92,7 @@ export const pageQuery = graphql`
                  id
                  frontmatter {
                    title
-                   date(formatString: "MMMM, YYYY")
+                   date(formatString: "MMMM DD, YYYY")
                    tags
                  }
                  fields {
