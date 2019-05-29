@@ -40,7 +40,7 @@ const Tag = ({ pageContext, data }) => {
                 </div>
 
                 <div className="post-list-main">
-                    <h2>{tagHeader}</h2>
+                    <i><h2 className="heading">{tagHeader}</h2></i>
                     {posts.map((post) => {
                         const tags = post.node.frontmatter.tags
                         return (
