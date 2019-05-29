@@ -32,7 +32,6 @@ const IndexPage = ({ data }) => {
         <div className="sidebar px-4 py-2">
           <Sidebar />
         </div>
-
         <div className="post-list-main">
           {posts.map((post) => {
             const tags = post.node.frontmatter.tags
