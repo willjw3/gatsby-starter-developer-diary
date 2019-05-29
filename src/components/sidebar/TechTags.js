@@ -8,7 +8,7 @@ const TechTags = (props) => {
 
     const labelCount = labels.map(label => {
         let count = 0;
-        posts.map(post => {
+        posts.forEach(post => {
             if (post.node.frontmatter.tags.includes(label.tag)) {
                 count = count + 1
             }
