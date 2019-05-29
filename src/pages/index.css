@@ -1,15 +1,9 @@
-h2 {
-  font-family: "Raleway";
-}
 
-p {
+p, h2 {
   font-family: "Raleway";
 }
 
 .index-main {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-around; */
     display: grid;
     grid-template-columns: 1fr 2fr;
 } 
