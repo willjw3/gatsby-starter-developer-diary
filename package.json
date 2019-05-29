@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "bootstrap": "^4.3.1",
+    "emotion": "^10.0.9",
     "gatsby": "^2.7.1",
     "gatsby-image": "^2.1.1",
     "gatsby-plugin-emotion": "^4.0.7",
@@ -25,6 +26,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
+    "react-custom-share": "^0.4.8",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0"
