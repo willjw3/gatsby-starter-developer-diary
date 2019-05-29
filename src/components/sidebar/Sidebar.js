@@ -54,9 +54,9 @@ const Sidebar = () => {
                         <Bio author={data.site.siteMetadata.author} tagline={data.site.siteMetadata.tagline} />
                         <SocialLinks contacts={data.site.siteMetadata.contacts} />
                         <div className="page-links">
-                            <Link to="#"><span className="text-dark d-block py-1">Blog Home</span></Link>
-                            <Link to="#"><span className="text-dark d-block py-1">About</span></Link>
-                            <Link to="#"><span className="text-dark d-block py-1">Contact</span></Link>
+                            <Link to="/"><span className="text-dark d-block py-1">Blog Home</span></Link>
+                            <Link to="/"><span className="text-dark d-block py-1">About</span></Link>
+                            <Link to="/"><span className="text-dark d-block py-1">Archives</span></Link>
                         </div>
                         <div className="tech-tags mt-4">
                             <TechTags labels={data.site.siteMetadata.labels} posts={data.allMarkdownRemark.edges} />
