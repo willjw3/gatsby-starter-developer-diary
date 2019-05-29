@@ -49,7 +49,7 @@ const Tag = ({ pageContext, data }) => {
                                     to={post.node.fields.slug}
                                     className="text-dark"
                                 >
-                                    <h2>{post.node.frontmatter.title}</h2>
+                                    <h2 className="heading">{post.node.frontmatter.title}</h2>
                                 </Link>
                                 <small className="d-block text-info">Posted on {post.node.frontmatter.date}
                                 </small>
