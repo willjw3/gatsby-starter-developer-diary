@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => {
                   to={post.node.fields.slug}
                   className="text-dark"
                 >
-                  <h2>{post.node.frontmatter.title}</h2>
+                  <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
                 <small className="d-block text-info">Posted in {post.node.frontmatter.date}
                 </small>
