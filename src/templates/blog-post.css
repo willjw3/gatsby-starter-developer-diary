@@ -1,9 +1,10 @@
 .post-page-main {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-around */
     display: grid;
     grid-template-columns: 1fr 2fr;
+}
+
+.heading {
+  font-family: "Raleway";
 }
 
 .sidebar {
