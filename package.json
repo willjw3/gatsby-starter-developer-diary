@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-developer-diary",
   "private": true,
-  "description": "A web-developer blog template to get you blogging quickly with Gatsby",
+  "description": "A Gatsby blog template designed for web developers. Blazing fast, it includes beautful web developer topic tags and social-media links",
   "version": "0.1.0",
   "author": "willjw3 <https://github.com/willjw3>",
   "dependencies": {
