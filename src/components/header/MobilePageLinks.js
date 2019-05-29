@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const MobileBio = ({ tagline, author }) => {
+const MobileBio = () => {
     return (
         <div className="mobile-bio-main">
             <div className="text-center">

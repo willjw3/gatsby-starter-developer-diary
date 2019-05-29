@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 
 import MobileSocialLinks from "./MobileSocialLinks"
-import MobileBio from "./MobileBio"
+import MobilePageLinks from "./MobilePageLinks"
 import SocialLinks from "./SocialLinks"
 import "./header.css"
 
@@ -37,7 +37,7 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
         <SocialLinks contacts={contacts} />
       </div>
       <MobileSocialLinks contacts={contacts} />
-      <MobileBio tagline={tagline} author={author} />
+      <MobilePageLinks />
     </header>
   )
 }

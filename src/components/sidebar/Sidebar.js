@@ -62,7 +62,6 @@ const Sidebar = () => {
                             <TechTags labels={data.site.siteMetadata.labels} posts={data.allMarkdownRemark.edges} />
                         </div>
                     </div>
-
                 </>
             )}
         />
