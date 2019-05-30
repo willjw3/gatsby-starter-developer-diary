@@ -11,6 +11,8 @@ import TechTag from "../components/tags/TechTag"
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
+  const currentPage = 1
+  const nextPage = (currentPage + 1).toString()
 
   const getTechTags = (tags) => {
     const techTags = []
@@ -43,7 +45,7 @@ const IndexPage = ({ data }) => {
                 >
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
-                <small className="d-block text-info">Posted on {post.node.frontmatter.date}
+                <small className="d-block text-info"><i>Posted on {post.node.frontmatter.date}</i>
                 </small>
                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
                 <Link
@@ -58,6 +60,11 @@ const IndexPage = ({ data }) => {
               </div>
             )
           })}
+          <div className="mt-4 text-center">
+            <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
+              <span className="text-dark">Next Page →</span>
+            </Link>
+          </div>
         </div>
       </div>
     </Layout>
@@ -80,7 +87,7 @@ export const pageQuery = graphql`
              }
            }
            allMarkdownRemark(
-             limit: 4
+             limit: 3
              sort: { fields: [frontmatter___date], order: DESC }
              filter: { frontmatter: { published: { eq: true } } }
            ) {
