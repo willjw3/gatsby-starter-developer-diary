@@ -72,7 +72,7 @@ pre[class*="language-"] {
 }
 @media only screen and (max-width: 450px) {
     pre[class*="language-"] {
-    max-width: 370px;
+    max-width: 350px;
     }
 }
 
