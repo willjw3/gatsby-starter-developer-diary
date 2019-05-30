@@ -55,7 +55,7 @@ const Sidebar = () => {
                         <SocialLinks contacts={data.site.siteMetadata.contacts} />
                         <div className="page-links">
                             <Link to="/"><span className="text-dark d-block py-1">Blog Home</span></Link>
-                            <Link to="/"><span className="text-dark d-block py-1">About</span></Link>
+                            <Link to="/about"><span className="text-dark d-block py-1">About</span></Link>
                             <Link to="/"><span className="text-dark d-block py-1">Archives</span></Link>
                         </div>
                         <div className="tech-tags mt-4">
