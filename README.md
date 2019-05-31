@@ -10,9 +10,36 @@
 
 ![devDiary](https://dl.dropboxusercontent.com/s/605o40f9b92e9m8/devdiary.jpg?dl=0)
 
-Developer Diary is a Gatsby Starter blog template created with web developers in mind, but really, anyone can use it. It's totally usuable right out of the box, but minimalist enough to be easily modifiable to suit your needs. No matter how much you change it, though, you'll definitely want to make use of the tech tags and developer social media links, and maybe even make some of your own.
+*Developer Diary is a Gatsby Starter blog template created with web developers in mind, but really, anyone can use it. It's totally usuable right out of the box, but minimalist enough to be easily modifiable to suit your needs. No matter how much you change it, though, you'll definitely want to make use of the tech tags and developer social media links, and maybe even make some of your own.*
 
 ## Features
+- Ready to go - Blog author name, author image, etc,... can be easily added using a config file.
+- Blog posts created as markdown files. It's easy to get started with markdown if you're unfamiliar - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- React v.16.8.
+- Beautiful tech-topic tags to attach to your web-development-related blog posts.
+- Developer-relevant social media icon links, including GitHub, Stack Overflow, and freeCodeCamp.
+- Minimalist design makes it highly modifiable; make your own customized contact forms and search components, for example.
+
+## Getting Started
+If you don't have Gatsby CLI installed yet, do that:
+```
+npm install -g gatsby-cli
+```
+Install this starter with your name of choice for your blog:
+```
+gatsby new your-blog-name https://github.com/willjw3/gatsby-starter-developer-diary.git
+```
+Navigate into your new project's directory:
+```
+cd your-blog-name
+```
+and run the development server:
+```
+gatsby develop
+```
+Go to [http://localhost:8000](http://localhost:8000) to see your new blog.
+
+
 
 Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
