@@ -12,6 +12,8 @@
 
 *Developer Diary is a Gatsby Starter blog template created with web developers in mind, but really, anyone can use it. It's totally usable right out of the box, but minimalist enough to be easily modifiable to suit your needs. No matter how much you change it, though, you'll definitely want to make use of the tech tags and developer social media links, and maybe even make some of your own.*
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ae092d09-ae34-4fc0-8179-322c86d197b4/deploy-status)](https://app.netlify.com/sites/developer-diary/deploys)
+
 ## Features
 - Ready to go - Blog author name, author image, etc,... can be easily added using a config file.
 - Blog posts created as markdown files. It's easy to get started with markdown if you're unfamiliar - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
@@ -65,7 +67,7 @@ and then add the rest of your content below the frontmatter.
 
 ## Making Tech Tags
 This starter already includes the tech tags you can see in the live demo. To use them, add the appropriate tag name to the `tags` array in the frontmatter of your post. Consult the `config.js` file to see the tag properties and get the tag name to be supplied to the `tags` array in the frontmatter.<br>
-To make a new tag, you can use icons from "React Icons", which are included in this starter. If you're the adventurous type, you can install and use other icons if you wish to do so. This starter uses both 'Font Awesome' icons and 'Devicons' from "React Icons" [React Icons Site](https://react-icons.netlify.com/#/)
+To make a new tag, you can use icons from "React Icons", which are included in this starter. If you're the adventurous type, you can install and use other icons if you wish to do so. This starter uses both 'Font Awesome' icons and 'Devicons' from "React Icons." [React Icons Site](https://react-icons.netlify.com/#/)
 
 ## Authors
 - Will Ward [@willjw3](https://github.com/willjw3)
