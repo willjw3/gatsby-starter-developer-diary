@@ -27,7 +27,7 @@ const ArchivePage = ({ data }) => {
 
     return (
         <Layout>
-            <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]} />
+            <SEO title="Archive" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]} />
             <div className="index-main">
                 <div className="sidebar px-4 py-2">
                     <Sidebar />
