@@ -27,7 +27,7 @@
   flex-direction: row;
   justify-content: space-around;
 }
-.mobile-bio-main {
+.mobile-pages-main {
   width: 100%;
   background: white;
   display: none;
@@ -46,5 +46,5 @@ small {
 @media only screen and (max-width: 850px) {
   .bottom-bar{display: flex;}
   .social-links{display: none;}
-  .mobile-bio-main{display: block;}
+  .mobile-pages-main{display: block;}
 }
