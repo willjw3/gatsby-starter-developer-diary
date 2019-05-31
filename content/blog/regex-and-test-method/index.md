@@ -6,11 +6,10 @@ date: '2019-01-06'
 ---
 
 [Video at YouTube](https://youtu.be/vAP8NLDzGwc). <br>
-[Source code and original post at GitHub](https://github.com/willjw3/Coding-Tutorials/tree/master/JavaScript-Regular-Expressions-And-Test-Method). <br>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vAP8NLDzGwc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
-Using the `test()` method in JavaScript to check for matches between a regular expression and a string can lead to unexpected results for newcomers.<br> Consider the following code:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sapien nisi, consequat nec dolor ut, lobortis vestibulum nunc. Nulla facilisi. Suspendisse leo urna, pulvinar ut pretium sit amet, consequat eget sapien. Nam ultricies in nulla finibus feugiat. Maecenas lacinia, lorem quis egestas convallis, tortor nunc consectetur est, vel finibus odio dui et nunc.
 ### noGlobalFlag.js
 
 ```
@@ -29,7 +28,7 @@ console.log(unRegex.test(str4));
 ```
 <br>
 
-When we run it and check the console, we see:
+Proin quis ante ut felis lacinia dignissim quis ac risus. Vestibulum a maximus est. Pellentesque malesuada eros ac diam aliquam, non pulvinar magna sodales.
 
 ```
 true
@@ -40,9 +39,7 @@ true
 ```
 <br>
 
-For each string, there was at least one match with our regex `unRegex = /.un/`.<br>
-
-What happens, though, when we set the global flag in our regex? (`unRegex = /.un/g`)
+ Fusce hendrerit malesuada quam, ut accumsan massa efficitur et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam vitae ornare sem, eget volutpat mauris. Praesent aliquet condimentum dui non bibendum. Nam dapibus rutrum mi sit amet luctus. Proin id vehicula risus. Nullam dictum, elit sit amet molestie eleifend, felis dolor scelerisque risus, sed dictum odio dolor id justo. Integer consectetur dui non tortor scelerisque, non vulputate sem laoreet.
 
 ```
 true
@@ -53,14 +50,8 @@ false
 ```
 <br>
 
-Even though we expected at least one match with `str4 = "A hot dog without a bun ain't no fun."`, we get a return of `false` indicating no match. Why?<br>
+Nunc blandit purus sit amet justo vehicula, at venenatis ante tempus. Integer sagittis ultrices lorem, ut faucibus erat molestie quis. Phasellus semper orci nisl, egestas maximus risus porta sit amet. Fusce vitae egestas sem. Nunc sagittis, erat sodales maximus tempus, magna diam iaculis ex, ut feugiat odio libero sit amet lectus. Suspendisse elit turpis, volutpat laoreet consequat ac, ultricies eu sem. Donec non orci in justo porta iaculis. Donec pulvinar nunc quis viverra volutpat. Quisque et orci non enim sodales eleifend. Etiam in enim id nulla posuere lacinia. Ut rutrum pharetra nisi quis feugiat.
 
-According to MDN Web Docs:
-
-> ### Using test() on a regex with the global flag
-> "If the regex has the global flag set, test() will advance the lastIndex of the regex. A subsequent use of test() will start the search  at the substring of str specified by lastIndex (exec() will also advance the lastIndex property). It is worth noting that the lastIndex will not reset when testing a different string."
-
-So, let's modify our code in `globalFlag.js` to log the `lastIndex` value for each application of the `test()` method.
 ### globalFlag.js
 ```
 let str1 = "The sun is out today.";
@@ -83,7 +74,7 @@ console.log(unRegex.lastIndex);
 ```
 <br>
 
-This gives us:
+Cras arcu lectus, euismod a lacinia a, cursus vitae magna. Aenean ultricies, enim id pharetra ultricies, ligula lectus congue tellus, ac lobortis ex elit at nulla. Sed lobortis vitae tortor sed laoreet. Praesent porta bibendum ullamcorper.
 
 ```
 true
@@ -98,9 +89,9 @@ false
 ```
 <br>
 
-For the first string, we get a match, and the index immediately after the match is recorded (7). From there, we look for a match in the second string, but we start from index 7. We get a match because 'run' in the second string is after index 7. The `lastIndex` is now recorded as 18. We look for a match in the third string and get it because 'fun' is after index 18. Now the `lastIndex' is recorded as 40. Looking at the fourth string, we see the first opportunity for a match is given at index 20 ('bun'). However, we're starting our search from index 40, so there's no way we'll catch 'bun' for a match. Using the same reasoning, we see that we won't even get a match for 'fun' in the fourth string.
+Integer fermentum euismod risus, vitae fringilla erat condimentum at. Suspendisse luctus egestas dui, eu dictum sem tincidunt sed. Sed efficitur eget orci eu dictum. Etiam faucibus, enim nec tincidunt sollicitudin, diam neque ultricies magna, eget ultrices sem tortor non justo. Vestibulum viverra tincidunt elit sit amet gravida. Morbi sed tempus odio. Nunc efficitur ultricies elit et porta. Praesent finibus placerat felis, vitae efficitur ligula sagittis non. Nam fringilla malesuada ligula ullamcorper dignissim.
 
-So, in short, if you're going to check for at least one match between a regular expression and each string in a set of strings, you need to **not** set the global flag for the regex. Of course, this makes sense if you know what setting the global flag does ([Not sure? Look here](https://www.w3schools.com/jsref/jsref_regexp_g.asp)). If you want to see all the matches for a single string, you could use the `match()` method and set the global flag in the regex.
+Morbi mauris lacus, vehicula eget ullamcorper et, fringilla at ipsum. Nam tempus felis ex, congue varius urna consectetur eget. Cras tempor condimentum accumsan. In hac habitasse platea dictumst. Nulla pharetra mauris enim, quis dictum ipsum dictum sed. Sed luctus eros volutpat, luctus augue et, tempus ante. Sed imperdiet diam id luctus faucibus. Sed ullamcorper suscipit arcu, in dictum lectus ultricies et. Donec accumsan a ipsum sed aliquet. Nulla auctor justo eget tincidunt egestas. Cras blandit, ante vitae facilisis hendrerit, justo mauris fermentum diam, id congue diam velit eu ipsum. Nullam pulvinar auctor tincidunt. Maecenas felis velit, bibendum ac purus nec, cursus lacinia nulla. Sed posuere orci sapien, id accumsan eros feugiat vel. Aenean convallis lacinia orci. In metus elit, iaculis vitae nisi vel, iaculis vehicula mi.
 
 ```
 let str1 = "The sun is out today.";
@@ -115,7 +106,7 @@ console.log(myMatches);
 
 <br>
 
-And, you'll get:
+Nam elementum augue vel nulla consectetur elementum.
 
 ```
 [ 'bun', 'fun' ]

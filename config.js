@@ -5,7 +5,6 @@ module.exports = {
   title: "Developer Diary",
   tagline: "Autodidact developer and sometimes hoop-jumper",
   copyright: "© 2019 willjw3, All rights reserved",
-  postsPerPage: 4,
   author: {
     name: "WILL WARD",
     bio: "Self-taught web developer and whisky aficionado",

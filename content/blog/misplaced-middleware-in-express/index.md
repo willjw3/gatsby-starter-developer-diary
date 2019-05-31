@@ -5,11 +5,8 @@ published: true
 date: '2018-12-29'
 ---
 
-[Source code at GitHub](https://github.com/willjw3/Coding-Tutorials/tree/master/Misplaced-Middleware-in-Express).
 
-This post assumes some familiarity with Node.js and Express.js.
-
-For those new to Node.js and Express, and having been tasked with completing a series of small projects designed to get you used to building [RESTful APIs](https://en.wikipedia.org/wiki/Representational_state_transfer), it's tempting to just throw HTTP methods and middleware functions into a server.js file and see what happens when information is submitted, especially if you're working with a file that has most of its required content already filled in for you and just needs you to write a method to go along with the ones already given. For example, imagine you're given the following code and are asked to add a method that gives, say, a specific `res.json()` response:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sapien nisi, consequat nec dolor ut, lobortis vestibulum nunc. Nulla facilisi. Suspendisse leo urna, pulvinar ut pretium sit amet, consequat eget sapien. Nam ultricies in nulla finibus feugiat. Maecenas lacinia, lorem quis egestas convallis, tortor nunc consectetur est, vel finibus odio dui et nunc. Proin quis ante ut felis lacinia dignissim quis ac risus. Vestibulum a maximus est. Pellentesque malesuada eros ac diam aliquam, non pulvinar magna sodales. Fusce hendrerit malesuada quam, ut accumsan massa efficitur et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam vitae ornare sem, eget volutpat mauris. Praesent aliquet condimentum dui non bibendum. Nam dapibus rutrum mi sit amet luctus. Proin id vehicula risus. Nullam dictum, elit sit amet molestie eleifend, felis dolor scelerisque risus, sed dictum odio dolor id justo. Integer consectetur dui non tortor scelerisque, non vulputate sem laoreet:
 
 
 ```
@@ -47,7 +44,7 @@ const listener = app.listen(process.env.PORT || 3000, () => {
 
 <br>
 
-Maybe, as part of your project, you're told that you need register a new user, so you have to add a method that takes the new user's information (in this case, a first and last name) as input, add the user to a database, and return, say, `res.json({"first_name": "Walter", "last_name": "White", "status": "registered" })`. You then code in the outline of a POST method in the server.js file underneath the given 'not-found' middleware function because, perhaps, you feel it should be in the 'middle' of the file. Before adding any code that adds the user to a database, you decide to check if you're getting the required input from the user. The html for the user input form is in `views/index.html`, which is given in the source code for this exercise. Anyway, your POST method below the 'not-found' middleware looks like:
+Nunc blandit purus sit amet justo vehicula, at venenatis ante tempus. Integer sagittis ultrices lorem, ut faucibus erat molestie quis. Phasellus semper orci nisl, egestas maximus risus porta sit amet. Fusce vitae egestas sem. Nunc sagittis, erat sodales maximus tempus, magna diam iaculis ex, ut feugiat odio libero sit amet lectus. Suspendisse elit turpis, volutpat laoreet consequat ac, ultricies eu sem. Donec non orci in justo porta iaculis. Donec pulvinar nunc quis viverra volutpat. Quisque et orci non enim sodales eleifend. Etiam in enim id nulla posuere lacinia. Ut rutrum pharetra nisi quis feugiat. Cras arcu lectus, euismod a lacinia a, cursus vitae magna. Aenean ultricies, enim id pharetra ultricies, ligula lectus congue tellus, ac lobortis ex elit at nulla. Sed lobortis vitae tortor sed laoreet. Praesent porta bibendum ullamcorper:
 
 
 ```
@@ -64,20 +61,7 @@ app.post('/api/users/new-user', (req, res) =>{
 ```
 <br>
 
-If this makes you feel uncomfortable, that's probably a good thing. Of course, if you're new to all of this, there's no shame in it if this doesn't bother you at all. It likely wouldn't have set any alarm bells off for me when I was new to using Node.js and Express. Anyway, imagine you enter the required information into the input fields:
-
-First name: "Walter", Last Name: "White"
-
-You click the 'Submit' button and see the response: `[object Object]`. <br>
-That's no good. So what went wrong?
-
-Well, rather than thinking too deeply about things at this point, taking a quick look at the Express documentation regarding writing middleware could bring clarity quickly. Seriously, have a look before continuing here... ([Express Docs - Writing middleware](https://expressjs.com/en/guide/writing-middleware.html))
-
-Hopefully, the following passage caught your eye:
-> "*The order of middleware loading is important: middleware functions that are loaded first are also executed first.*"
-
-Looking at what the not-found middleware is doing should make it clear that being placed before our POST method is bad; it returns a call to the next function with a parameter object that says something important hasn't been found. (If you're not sure what a 404 error is, have a look [here](https://www.ionos.com/digitalguide/websites/website-creation/what-does-the-404-not-found-error-mean/).) <br>
-This can't be good. What becomes of our POST method? To gain some insight, logging things to the console could prove useful. For example, we can verify if our methods are firing by enclosing two `console.log()` statements respectively.
+Integer fermentum euismod risus, vitae fringilla erat condimentum at. Suspendisse luctus egestas dui, eu dictum sem tincidunt sed. Sed efficitur eget orci eu dictum. Etiam faucibus, enim nec tincidunt sollicitudin, diam neque ultricies magna, eget ultrices sem tortor non justo. Vestibulum viverra tincidunt elit sit amet gravida. Morbi sed tempus odio. Nunc efficitur ultricies elit et porta. Praesent finibus placerat felis, vitae efficitur ligula sagittis non. Nam fringilla malesuada ligula ullamcorper dignissim.
 
 
 ```
@@ -96,7 +80,7 @@ app.post('/api/users/new-user', (req, res) =>{
 ```
 <br>
 
-Submitting the same information again and checking the console, we see:
+Morbi mauris lacus, vehicula eget ullamcorper et, fringilla at ipsum. Nam tempus felis ex, congue varius urna consectetur eget. Cras tempor condimentum accumsan. In hac habitasse platea dictumst. Nulla pharetra mauris enim, quis dictum ipsum dictum sed. Sed luctus eros volutpat, luctus augue et, tempus ante:
 
 
 ```
@@ -107,7 +91,7 @@ fire 1
 ```
 <br>
 
-So, a couple of well-placed `console.log()` statements show us that the POST method isn't even firing. Bad, right? And, what's this `[object Object]` business, anyway? Well, it turns out that the 'not-found' middleware is returning a function call that isn't being handled properly, so we can add in an 'error-handler' middleware with a couple of investigative `console.log()` statements.
+Sed imperdiet diam id luctus faucibus. Sed ullamcorper suscipit arcu, in dictum lectus ultricies et. Donec accumsan a ipsum sed aliquet. Nulla auctor justo eget tincidunt egestas. Cras blandit, ante vitae facilisis hendrerit, justo mauris fermentum diam, id congue diam velit eu ipsum. Nullam pulvinar auctor tincidunt. Maecenas felis velit, bibendum ac purus nec, cursus lacinia nulla. Sed posuere orci sapien, id accumsan eros feugiat vel. Aenean convallis lacinia orci. In metus elit, iaculis vitae nisi vel, iaculis vehicula mi.
 
 
 ```
@@ -147,7 +131,7 @@ app.post('/api/users/new-user', (req, res) =>{
 ```
 <br>
 
-Submitting the user input again and checking the console, we see:
+Nam elementum augue vel nulla consectetur elementum. Curabitur tincidunt hendrerit justo. Praesent nisl dui, mollis vitae quam eu, dignissim faucibus lorem:
 
 
 ```
@@ -159,12 +143,7 @@ fire 2
 ```
 <br>
 
-Both the 'not-found' middleware and the 'error-handler' middleware fire and what was returned by the 'not-found' middleware seems to have been handled appropriately by the 'error-handler' middleware. That's good. The importance of these two middlewares seems clear now, right?<br>
-Now, following what the Express documentation told us:
-
-> "*The order of middleware loading is important: middleware functions that are loaded first are also executed first.*"
-
-we take our POST Method, **which includes its own middleware function**, and place it *before* the 'not-found' and 'error-handler' middlewares in the server.js file.
+Sed vitae erat at sem suscipit laoreet nec vel diam. Donec at quam sapien. Nulla quis egestas metus, ut tempus elit. Vivamus placerat diam ac ultrices finibus. Aenean vitae molestie eros. Curabitur pulvinar ornare est volutpat consequat. Vivamus ullamcorper pharetra leo ac volutpat. Curabitur efficitur egestas posuere. Duis ut sagittis diam, sed sollicitudin lectus. Phasellus in lorem maximus, volutpat felis non, fringilla mi. Curabitur in fringilla sem, nec rhoncus elit. Aenean non ante dignissim elit suscipit hendrerit sit amet nec eros. Curabitur feugiat, metus non convallis scelerisque, nisl urna imperdiet velit, eget semper enim ante eget lorem.
 
 
 ```
@@ -205,7 +184,7 @@ app.use((err, req, res, next) => {
 ```
 <br>
 
-Submitting the user input, we see logged to the console:
+Nulla pharetra mauris enim, quis dictum ipsum dictum sed. Sed luctus eros volutpat, luctus augue et, tempus ante. Sed imperdiet diam id luctus faucibus. Sed ullamcorper suscipit arcu, in dictum lectus ultricies et. Donec accumsan a ipsum sed aliquet. Nulla auctor justo eget tincidunt egestas:
 
 
 ```
@@ -215,7 +194,7 @@ fire 1
 ```
 <br>
 
-which means the POST method fires and the 'not-found' and 'error-handler' middlewares don't; `res.json()` in this method ends the request-response cycle. And, most importantly, in the browser
+ Donec at quam sapien. Nulla quis egestas metus, ut tempus elit. Vivamus placerat diam ac ultrices finibus. Aenean vitae molestie eros. Curabitur pulvinar ornare est volutpat consequat. Vivamus ullamcorper pharetra leo ac volutpat. Curabitur efficitur egestas posuere.
 
 
 ```
@@ -223,5 +202,4 @@ which means the POST method fires and the 'not-found' and 'error-handler' middle
 ```
 <br>
 
-is displayed.<br>
-Success.
+consectetur elementum.
