@@ -10,83 +10,75 @@
 
 ![devDiary](https://dl.dropboxusercontent.com/s/605o40f9b92e9m8/devdiary.jpg?dl=0)
 
-Developer Diary is a Gatsby Starter blog template created with web developers in mind, but really, anyone can use it. It's totally usuable right out of the box, but minimalist enough to be easily modifiable to suit your needs. No matter how much you change it, though, you'll definitely want to make use of the tech tags and developer social media links, and maybe even make some of your own.
+*Developer Diary is a Gatsby Starter blog template created with web developers in mind, but really, anyone can use it. It's totally usable right out of the box, but minimalist enough to be easily modifiable to suit your needs. No matter how much you change it, though, you'll definitely want to make use of the tech tags and developer social media links, and maybe even make some of your own.*
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ae092d09-ae34-4fc0-8179-322c86d197b4/deploy-status)](https://app.netlify.com/sites/developer-diary/deploys)
 
 ## Features
+- Ready to go - Blog author name, author image, etc,... can be easily added using a config file.
+- Blog posts created as markdown files. It's easy to get started with markdown if you're unfamiliar - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- React v.16.8.
+- Beautiful tech-topic tags to attach to your web-development-related blog posts.
+- Developer-relevant social media icon links, including GitHub, Stack Overflow, and freeCodeCamp.
+- Minimalist design makes it highly modifiable; make your own customized contact forms and search components, for example.
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+## Getting Started
+If you don't have Gatsby CLI installed yet, do that:
+```
+npm install -g gatsby-cli
+```
+Install this starter with your name of choice for your blog:
+```
+gatsby new your-blog-name https://github.com/willjw3/gatsby-starter-developer-diary.git
+```
+Navigate into your new project's directory:
+```
+cd your-blog-name
+```
+and run the development server:
+```
+gatsby develop
+```
+Go to [http://localhost:8000](http://localhost:8000) to see your new blog.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## Adding Your Information To The Blog
+You can add your blog's url, title, tagline, author, social-media contact info and more in the `config.js` file. You'll also find the props for the tech tags in `config.js`. You'll see that all of this information is used as metadata in the `gatsby-config.js` file.
+Things to keep in mind when editing `config.js`
+- Don't add a trailing slash to your url. For example `https://mysite.com`, not `https://mysite.com/`
+- The social media urls you provide for your social-media accounts (GitHub, Stack Overflow, etc,...) will make it so that clicking the corresponding social media icons will take you to your account pages.<br>
 
-## 🚀 Quick start
+To add your profile image to the blog, add your image file to `src/images`, then import the file into both `src/components/sidebar/Bio.js` and `src/components/header/MobileBio.js`
 
-1.  **Create a Gatsby site.**
+## Adding Blog Posts
+Using your favorite text editor, go into your project's directory and find the `content` folder. In that folder, you'll find the `blog` folder. In the `blog` folder, add a new folder with your new blog post's name in mind. For example, if your post were to be called "Make a Blog With Gatsby", you might want to create the folder `content/blog/make-blog-with-gatsby` <br>
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+In that newly created folder, add a markdown file called `index.md` (All of your posts will have their content in files called `index.md`).<br>
 
-    ```sh
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+Add the frontmatter to that markdown file:
+```
+---
+title: 'Make a Blog With React'
+tags: ["react", "nodejs"]
+published: true
+date: '2019-05-29'
+---
+```
+and then add the rest of your content below the frontmatter.
 
-1.  **Start developing.**
+## Making Tech Tags
+This starter already includes the tech tags you can see in the live demo. To use them, add the appropriate tag name to the `tags` array in the frontmatter of your post. Consult the `config.js` file to see the tag properties and get the tag name to be supplied to the `tags` array in the frontmatter.<br>
+To make a new tag, you can use icons from "React Icons", which are included in this starter. If you're the adventurous type, you can install and use other icons if you wish to do so. This starter uses both 'Font Awesome' icons and 'Devicons' from "React Icons." [React Icons Site](https://react-icons.netlify.com/#/)
 
-    Navigate into your new site’s directory and start it up.
+## Authors
+- Will Ward [@willjw3](https://github.com/willjw3)
 
-    ```sh
-    cd my-default-starter/
-    gatsby develop
-    ```
+## Contribute
+- Fork the repo
+- Create your feature branch (git checkout -b feature/fooBar)
+- Commit your changes (git commit -am 'Add some fooBar')
+- Push to the branch (git push origin feature/fooBar)
+- Create a new Pull Request
 
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
 
 ## 🎓 Learning Gatsby
 
@@ -99,5 +91,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 ## 💫 Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
