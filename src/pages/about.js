@@ -59,8 +59,6 @@ const AboutPage = (props) => {
                             </span>
                             <p className="d-inline-block ml-3 w-75 align-top">Mobile responsive, of course</p>
                         </div>
-                       
-
                     </div>
                 </div>
             </div>
