@@ -7,7 +7,7 @@ import "./index.css"
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
 
-const BlogPost = (props) => {
+const AboutPage = (props) => {
     return (
         <Layout>
             <SEO title="About" />
@@ -70,4 +70,5 @@ const BlogPost = (props) => {
 
 
 
-export default BlogPost
+export default AboutPage
+
