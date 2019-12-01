@@ -69,11 +69,24 @@ published: true
 date: '2019-05-29'
 ---
 ```
-and then add the rest of your content below the frontmatter.
+and then add the rest of your content below the frontmatter. 
+<br>
+To add an image to a blog post (at the top, above the content and under the tags), add the image to the `images` folder in the `src` folder. Then add the relative path to the image in the frontmatter along with the desired width and height of the image in pixels.
+```
+---
+title: 'Make a Blog With React'
+tags: ["react", "nodejs"]
+featuredImage: "../../../src/images/gatsby-icon.png"
+imageWidth: 200
+imageHeight: 200
+published: true
+date: '2019-05-29'
+---
+```
 
 ## Making Tech Tags
 This starter already includes the tech tags you can see in the live demo. To use them, add the appropriate tag name to the `tags` array in the frontmatter of your post. Consult the `config.js` file to see the tag properties and get the tag name to be supplied to the `tags` array in the frontmatter.<br>
-To make a new tag, you can use icons from "React Icons", which are included in this starter. If you're the adventurous type, you can install and use other icons if you wish to do so. This starter uses both 'Font Awesome' icons and 'Devicons' from "React Icons." [React Icons Site](https://react-icons.netlify.com/#/)
+To make a new tag, create a new "label" in `config.js`, find a suitable svg icon, and paste the svg path in as the value for the "name" property of the label. Have a look at the existing labels in the `config.js` file and all should soon be clear. A good place to look for svg icons is at [simple icons](https://simpleicons.org/). 
 
 ## Authors
 - Will Ward [@willjw3](https://github.com/willjw3)
