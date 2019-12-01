@@ -1,6 +1,9 @@
 ---
 title: 'Welcome To My Web Developer Blog'
-tags: ["react", "vscode", "git", "css", "python", "ruby", "java", "angular", "html", "php", "mongodb", ]
+tags: ["react", "vscode", "git", "css", "python", "ruby", "java", "angular", "html", "php", "mongodb", "graphql", "gatsby" ]
+featuredImage: "../../../src/images/gatsby-icon.png"
+imageWidth: 200
+imageHeight: 200
 published: true
 date: '2018-08-20'
 ---

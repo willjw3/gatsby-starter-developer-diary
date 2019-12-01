@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
 import "./blog-post.css"
 
 import Sidebar from "../components/sidebar/Sidebar"
@@ -10,6 +11,13 @@ import CustomShareBlock from "../components/CustomShareBlock"
 
 const BlogPost = (props) => {
   const post = props.data.markdownRemark
+  let featuredImgFluid
+  let imgwidth
+  let imgheight 
+  featuredImgFluid = post.frontmatter.featuredImage ?post.frontmatter.featuredImage.childImageSharp.fluid : null
+  imgwidth = post.frontmatter.imageWidth ? post.frontmatter.imageWidth : null
+  imgheight = post.frontmatter.imageHeight ? post.frontmatter.imageHeight : null
+
   const labels = props.data.site.siteMetadata.labels
   const siteName = props.data.site.siteMetadata.title 
   const siteUrl = props.data.site.siteMetadata.url
@@ -43,6 +51,11 @@ const BlogPost = (props) => {
             <div className="d-block">
               {getTechTags(tags)}
             </div>
+            { featuredImgFluid && 
+              <div style={{width: imgwidth, height: imgheight, margin: "auto"}}>
+                <Img fluid={featuredImgFluid} />
+              </div>
+            } 
             <br />
             <small><i>Published on </i> {post.frontmatter.date}</small>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -73,6 +86,15 @@ export const query = graphql`
       html
       frontmatter {
         title
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        imageWidth
+        imageHeight
         date(formatString: "MMMM DD, YYYY")
         tags
       }
