@@ -51,13 +51,14 @@ const BlogPost = (props) => {
             <div className="d-block">
               {getTechTags(tags)}
             </div>
+   
+            <br />
+            <small><i>Published on </i> {post.frontmatter.date}</small>
             { featuredImgFluid && 
               <div style={{width: imgwidth, height: imgheight, margin: "auto"}}>
                 <Img fluid={featuredImgFluid} />
               </div>
-            } 
-            <br />
-            <small><i>Published on </i> {post.frontmatter.date}</small>
+            }
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
             <CustomShareBlock title={post.frontmatter.title} siteName={siteName} url={url} />
           </div>
