@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { FaCheckCircle } from "react-icons/fa"
@@ -8,6 +9,17 @@ import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
 
 const AboutPage = (props) => {
+    const labels = props.data.site.siteMetadata.labels
+    const aboutTags = ["react", "nodejs", "html", "css"]
+    const tags = {}
+    labels.forEach(label => {
+        aboutTags.forEach(tag => {
+            if (tag === label.tag) {
+                tags[tag] = label.name
+            }
+        })
+    })
+
     return (
         <Layout>
             <SEO title="About" />
@@ -35,10 +47,10 @@ const AboutPage = (props) => {
                             </span>
                             <p className="d-inline-block ml-3 w-75 align-top">Tech tags designed for web developers</p>
                             <div className="ml-5">
-                                <TechTag tag="react" tech="React" name="DiReact" size={20} color="deepskyblue" />
-                                <TechTag tag="nodejs" tech="Node.js" name="DiNodejsSmall" size={20} color="lightgreen" />
-                                <TechTag tag="html" tech="HTML" name="FaHtml5" size={20} color="darkorange" />
-                                <TechTag tag="css" tech="CSS" name="DiCss3Full" size={20} color="teal" />
+                                <TechTag tag="react" tech="React" name={tags["react"]} size={20} color="deepskyblue" />
+                                <TechTag tag="nodejs" tech="Node.js" name={tags["nodejs"]} size={20} color="lightgreen" />
+                                <TechTag tag="html" tech="HTML" name={tags["html"]} size={20} color="darkorange" />
+                                <TechTag tag="css" tech="CSS" name={tags["css"]} size={20} color="teal" />
                             </div>  
                         </div>
                         <div className="mt-4">
@@ -66,7 +78,21 @@ const AboutPage = (props) => {
     )
 }
 
-
+export const pageQuery = graphql`
+    query aboutQuery {
+        site {
+            siteMetadata {
+                labels {
+                    tag
+                    tech 
+                    name 
+                    size 
+                    color
+                }
+            }
+        }
+    }
+`
 
 export default AboutPage
 
