@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
 
 media_folder: static/assets
 public_folder: assets
@@ -11,6 +12,8 @@ collections:
     create: true
     fields:
       - { name: path, label: Path }
+      - { name: author, label: Author, widget: string }
+      - { name: tags, label: Tags, widget: list, required: false }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
