@@ -1,4 +1,5 @@
 ---
+path: test-post-netlify-cms
 author: Will Jay
 tags:
   - '[react'
