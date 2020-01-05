@@ -9,6 +9,6 @@ title: Test Post After Netlify CMS Install
 ---
 *Crossing Fingers...*
 
-Looks like we've finally got the cms working...
+Looks like we've gotten the cms working, folks. Give it a try!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CZ0JBAf3_r4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
