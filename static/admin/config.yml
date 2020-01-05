@@ -14,6 +14,7 @@ collections:
       - { name: path, label: Path }
       - { name: author, label: Author, widget: string }
       - { name: tags, label: Tags, widget: list, required: false }
+      - { name: published, label: Published, widget: boolean }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
