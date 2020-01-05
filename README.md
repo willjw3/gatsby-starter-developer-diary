@@ -56,7 +56,7 @@ Things to keep in mind when editing `config.js`
 To add your profile image to the blog, add your image file to `src/images`, then import the file into both `src/components/sidebar/Bio.js` and `src/components/header/MobileBio.js`
 
 ## Adding Blog Posts Manually
-Using your favorite text editor, go into your project's directory and find the `posts` folder. In that folder, add a new markdown file with your new blog post's name in mind. For example, if your post were to be called "Make a Blog With Gatsby", you might want to create the file `posts/make-blog-with-gatsby` <br>
+Using your favorite text editor, go into your project's directory and find the `posts` folder. In that folder, add a new markdown file with your new blog post's name in mind. For example, if your post were to be called "Make a Blog With Gatsby", you might want to create the file `make-blog-with-gatsby.md` <br>
 
 Add the frontmatter to that markdown file:
 ```
