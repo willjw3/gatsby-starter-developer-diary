@@ -11,6 +11,7 @@ collections:
     folder: posts
     create: true
     fields:
+      - { name: path, label: Path }
       - { name: author, label: Author, widget: string }
       - { name: tags, label: Tags, widget: list, required: false }
       - { name: date, label: Date, widget: datetime }
