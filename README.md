@@ -45,7 +45,9 @@ and run the development server:
 ```
 gatsby develop
 ```
-Go to [http://localhost:8000](http://localhost:8000) to see your new blog.
+Go to the [http://localhost:8000](http://localhost:8000) to see your new blog.<br>
+Go to [http://localhost:8000/___graphql](http://localhost:8000/___graphql) to explore your site with a simple GraphQL interface.<br>
+Go to the [http://localhost:8000/admin/](http://localhost:8000/admin/) to access the content management system. (Make sure you've set things up with Netlify CMS first - see "Adding blog posts using Netlify CMS (Content Management System)" below)
 
 ## Adding Your Information To The Blog
 You can add your blog's url, title, tagline, author, social-media contact info and more in the `config.js` file. You'll also find the props for the tech tags in `config.js`. You'll see that all of this information is used as metadata in the `gatsby-config.js` file.
@@ -56,7 +58,28 @@ Things to keep in mind when editing `config.js`
 To add your profile image to the blog, add your image file to `src/images`, then import the file into both `src/components/sidebar/Bio.js` and `src/components/header/MobileBio.js`
 
 ## Adding blog posts using Netlify CMS (Content Management System)
-*Netlify CMS was just made part of the Developer Diary starter. Documentation on how to use it with your blog coming soon!*
+If you aren't familiar with Netlify CMS, the first thing you'll want to do is familiarize yourself with it. [Netlify CMS](https://www.netlifycms.org/)<br>
+*Note: It's recommended that you deploy your site with Netlify. Netlify hosting and Netlify CMS are separate, but work best when used together.*<br>
+Both the `gatsby-plugin-netlify-cms` plugin and the `netlify-cms-app` are already installed in your blog. All you need to do is set up your site for continuous deployment with a platform like [Netlify](https://www.netlify.com/) and connect Netlify CMS to your GitHub (if you're using GitHub) repository by doing the following:<br>
+
+(From the Netlify CMS docs)
+> Netlify's Identity and Git Gateway services allow you to manage CMS admin users for your site without requiring them to have an account with your Git host or commit access on your repo. From your site dashboard on Netlify:
+
+> Go to Settings > Identity, and select Enable Identity service.
+Under Registration preferences, select Open or Invite only. In most cases, you want only invited users to access your CMS, but if you're just experimenting, you can leave it open for convenience.
+If you'd like to allow one-click login with services like Google and GitHub, check the boxes next to the services you'd like to use, under External providers.
+Scroll down to Services > Git Gateway, and click Enable Git Gateway. This authenticates with your Git host and generates an API access token. In this case, we're leaving the Roles field blank, which means any logged in user may access the CMS. For information on changing this, check the Netlify Identity documentation.
+
+**Creating Blog Posts with the CMS**
+- Go to `<your site's url>/admin` and log in.
+- Fill in the fields:
+  - AUTHOR: enter the post author's name. Ex: `Mean Gene`
+  - TAGS: enter in tag names separated by commas and spaces. Ex: `gatsby, graphql`
+  - PUBLISHED: toggle the switch to the on position. This is the same as setting the frontmatter field manually (`published: true`)
+  - DATE: leave the current date and time, or click to bring up the date picker.
+  - TITLE: enter your post's title. Ex: `My First Post`
+  - BODY: enter your post's main body content, either in Markdown or in Rich Text.
+- Click 'Publish'
 
 
 ## Adding Blog Posts Manually
