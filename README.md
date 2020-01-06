@@ -73,7 +73,6 @@ Scroll down to Services > Git Gateway, and click Enable Git Gateway. This authen
 **Creating Blog Posts with the CMS**
 - Go to `<your site's url>/admin` and log in.
 - Fill in the fields:
-  - AUTHOR: enter the post author's name. Ex: `Mean Gene`
   - TAGS: enter in tag names separated by commas and spaces. Ex: `gatsby, graphql`
   - PUBLISHED: toggle the switch to the on position. This is the same as setting the frontmatter field manually (`published: true`)
   - DATE: leave the current date and time, or click to bring up the date picker.
