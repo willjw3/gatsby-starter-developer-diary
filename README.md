@@ -17,7 +17,7 @@
 
 ## Features
 - Ready to go - Blog author name, author image, etc,... can be easily added using a config file.
-- Includes Netlify CMS. Users can log in to an admin page and easily create a blog post using the UI provided by Netlify CMS.
+- Includes Netlify CMS. Users can log in to an admin page and easily create a blog post with a nice, simple user interface.
 - Blog posts created as markdown files. It's easy to get started with markdown if you're unfamiliar - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 - Gatsby v.2
 - React v.16.8.
