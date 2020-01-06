@@ -55,6 +55,10 @@ Things to keep in mind when editing `config.js`
 
 To add your profile image to the blog, add your image file to `src/images`, then import the file into both `src/components/sidebar/Bio.js` and `src/components/header/MobileBio.js`
 
+## Adding blog posts using Netlify CMS (Content Management System)
+*Netlify CMS was just made part of the Developer Diary starter. Documentation on how to use it with your blog coming soon!*
+
+
 ## Adding Blog Posts Manually
 Using your favorite text editor, go into your project's directory and find the `posts` folder. In that folder, add a new markdown file with your new blog post's name in mind. For example, if your post were to be called "Make a Blog With Gatsby", you might want to create the file `make-blog-with-gatsby.md` <br>
 
@@ -69,21 +73,6 @@ date: '2019-05-29'
 ```
 and then add the rest of your content below the frontmatter. 
 <br>
-To add an image to a blog post (at the top, above the content and under the tags), add the image to the `images` folder in the `src` folder. Then add the relative path to the image in the frontmatter along with the desired width and height of the image in pixels.
-```
----
-title: 'Make a Blog With React'
-tags: ["react", "nodejs"]
-featuredImage: "../../../src/images/gatsby-icon.png"
-imageWidth: 200
-imageHeight: 200
-published: true
-date: '2019-05-29'
----
-```
-
-## Adding blog posts using Netlify CMS (Content Management System)
-*Netlify CMS was just made part of the Developer Diary starter. Documentation on how to use it with your blog coming soon!*
 
 ## Making Tech Tags
 This starter already includes the tech tags you can see in the live demo. To use them, add the appropriate tag name to the `tags` array in the frontmatter of your post. Consult the `config.js` file to see the tag properties and get the tag name to be supplied to the `tags` array in the frontmatter.<br>
