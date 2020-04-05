@@ -12,7 +12,9 @@ const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
   const currentPage = 1
+  const postsPerPage = 3 // see graphql limit
   const nextPage = (currentPage + 1).toString()
+  const hasNextPage = data.allMarkdownRemark.totalCount > postsPerPage
 
   const getTechTags = (tags) => {
     const techTags = []
@@ -60,11 +62,13 @@ const IndexPage = ({ data }) => {
               </div>
             )
           })}
-          <div className="mt-4 text-center">
-            <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
-              <span className="text-dark">Next Page →</span>
-            </Link>
-          </div>
+          {hasNextPage &&
+            <div className="mt-4 text-center">
+              <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
+                <span className="text-dark">Next Page →</span>
+              </Link>
+            </div>
+          }
         </div>
       </div>
     </Layout>
