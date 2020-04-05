@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
   const currentPage = 1
-  const postsPerPage = 3 // see graphql limit
+  const postsPerPage = 3 // see limit in graphql query below
   const nextPage = (currentPage + 1).toString()
   const hasNextPage = data.allMarkdownRemark.totalCount > postsPerPage
 
