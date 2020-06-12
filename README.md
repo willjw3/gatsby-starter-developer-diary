@@ -104,6 +104,9 @@ To make a new tag, create a new "label" in `config.js`, find a suitable svg icon
 ## Authors
 - Will Ward [@willjw3](https://github.com/willjw3)
 
+## Contributors
+- [@tanden](https://github.com/tanden)
+
 ## Contribute
 - Fork the repo
 - Create your feature branch (git checkout -b feature/fooBar)
