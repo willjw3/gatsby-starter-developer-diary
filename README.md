@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="https://www.gatsbyjs.com">
+    <img alt="Gatsby" src="https://avatars3.githubusercontent.com/u/12551863?s=400&v=4" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -101,11 +101,8 @@ and then add the rest of your content below the frontmatter.
 This starter already includes the tech tags you can see in the live demo. To use them, add the appropriate tag name to the `tags` array in the frontmatter of your post. Consult the `config.js` file to see the tag properties and get the tag name to be supplied to the `tags` array in the frontmatter.<br>
 To make a new tag, create a new "label" in `config.js`, find a suitable svg icon, and paste the svg path in as the value for the "name" property of the label. Have a look at the existing labels in the `config.js` file and all should soon be clear. A good place to look for svg icons is at [simple icons](https://simpleicons.org/). 
 
-## Authors
+## Author
 - Will Ward [@willjw3](https://github.com/willjw3)
-
-## Contributors
-- [@tanden](https://github.com/tanden)
 
 ## Contribute
 - Fork the repo
