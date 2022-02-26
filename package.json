@@ -25,7 +25,7 @@
     "gatsby-transformer-sharp": "^2.1.19",
     "lodash": "^4.17.11",
     "netlify-cms-app": "^2.10.1",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.27.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
